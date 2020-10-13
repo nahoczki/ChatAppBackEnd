@@ -24,4 +24,4 @@ app.use('/api/user', authRoute);
 
 //qN7X1xsktvPLf5IR
 
-app.listen(3000, () => console.log("Server listening on port 3000"))
+app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
