@@ -24,10 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1119bd0-6e94-4acf-9bee-22f79594e1a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers/error-handler.js" afterDir="false" />
+    <list default="true" id="e1119bd0-6e94-4acf-9bee-22f79594e1a4" name="Default Changelist" comment="Fixed error handling, returns json object">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +80,16 @@
       <option name="presentableId" value="Default" />
       <updated>1602574696582</updated>
       <workItem from="1602574697632" duration="3277000" />
-      <workItem from="1602637603704" duration="1179000" />
+      <workItem from="1602637603704" duration="2746000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed error handling, returns json object">
+      <created>1602638857164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602638857164</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +108,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed error handling, returns json object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed error handling, returns json object" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2334" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602576035241">
@@ -128,5 +138,9 @@
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602575890326" />
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602577996153" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1602638860866">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602638860866" />
   </component>
 </project>
