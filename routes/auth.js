@@ -3,17 +3,18 @@ const User =  require('../model/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const {handleErrorMsg} = require("../helpers/error-handler");
 const {loginValidation, registerValidation} = require('../helpers/validation');
 
 
 router.post('/register', async (req, res) => {
     //Validation
     const { error } = registerValidation(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) return res.status(400).send(handleErrorMsg(400, error.details[0].message));
 
     //Check if user exists
     const emailExist = await User.findOne({email: req.body.email});
-    if (emailExist) return res.status(409).send("Email already exists");
+    if (emailExist) return res.status(409).send(handleErrorMsg(409, "Email already exists"));
 
     //Hash pass
     const salt = bcrypt.genSaltSync(10);
@@ -42,11 +43,11 @@ router.post('/login', async (req, res) => {
 
     //Check if user exists
     const user = await User.findOne({email: req.body.email});
-    if (!user) return res.status(401).send("User does not exist, or password is incorrect");
+    if (!user) return res.status(401).send(handleErrorMsg(401, "User does not exist, or password is incorrect"));
 
     //Check if pass is correct
     const validPass = bcrypt.compareSync(req.body.password, user.password);
-    if (!validPass) return res.status(401).send("User does not exist, or password is incorrect");
+    if (!validPass) return res.status(401).send(handleErrorMsg(401, "User does not exist, or password is incorrect"));
 
     //Create and assign jwt token
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);

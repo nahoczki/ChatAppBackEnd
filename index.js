@@ -22,6 +22,5 @@ app.use(express.json());
 //Route Middleware
 app.use('/api/user', authRoute);
 
-//qN7X1xsktvPLf5IR
 
 app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
