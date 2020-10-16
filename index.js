@@ -3,7 +3,14 @@ const app = express();
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 
+const server = app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
+const io = require('socket.io')(server);
+
 dotenv.config();
+
+io.on('connection', () =>{
+    console.log('a user is connected')
+})
 
 
 //DB
@@ -27,4 +34,3 @@ app.use('/api/users', usersRoute);
 app.use('/api/rooms', roomRoute);
 
 
-app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
