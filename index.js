@@ -15,14 +15,16 @@ mongoose.connect(process.env.DB_CONNECT,
 //Routes
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
+const roomRoute = require('./routes/chatroom')
 
 //Middleware
 app.use(express.json());
 
 
 //Route Middleware
-app.use('/api/user', authRoute);
+app.use('/api/auth', authRoute);
 app.use('/api/users', usersRoute);
+app.use('/api/rooms', roomRoute);
 
 
 app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))

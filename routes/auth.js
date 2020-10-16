@@ -29,9 +29,15 @@ router.post('/register', async (req, res) => {
     })
     try {
         const savedUser = await user.save();
-        res.send(savedUser);
+        res.send({
+            _id : savedUser._id,
+            firstname : savedUser.firstname,
+            lastname : savedUser.lastname,
+            email : savedUser.email,
+            chatrooms : savedUser.chatrooms
+        });
     }catch (e) {
-        res.status(400).send(e)
+        res.status(400).send(handleErrorMsg(400, "Internal Error"))
     }
 
 })
@@ -53,7 +59,13 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
     res.header('auth-token', token);
 
-    res.send(user)
+    res.send({
+        _id : user._id,
+        firstname : user.firstname,
+        lastname : user.lastname,
+        email : user.email,
+        chatrooms : user.chatrooms
+    });
 
 })
 

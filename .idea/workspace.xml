@@ -13,13 +13,24 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:heroku" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1119bd0-6e94-4acf-9bee-22f79594e1a4" name="Default Changelist" comment="Added /users/ route">
+    <list default="true" id="e1119bd0-6e94-4acf-9bee-22f79594e1a4" name="Default Changelist" comment="Fixed error handling, returns json object">
+      <change afterPath="$PROJECT_DIR$/model/ChatRoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/chatroom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +49,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ioX0e8SSayxCC58c2J97iDbo0U" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,10 +59,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.67" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,15 +103,14 @@
       <option name="presentableId" value="Default" />
       <updated>1602574696582</updated>
       <workItem from="1602574697632" duration="3277000" />
-      <workItem from="1602637603704" duration="1179000" />
-      <workItem from="1602727225033" duration="5230000" />
+      <workItem from="1602637603704" duration="2746000" />
     </task>
-    <task id="LOCAL-00001" summary="Added /users/ route">
-      <created>1602734469992</created>
+    <task id="LOCAL-00001" summary="Fixed error handling, returns json object">
+      <created>1602638857164</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1602734469993</updated>
+      <updated>1602638857164</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -123,45 +134,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added /users/ route" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added /users/ route" />
+    <MESSAGE value="Fixed error handling, returns json object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed error handling, returns json object" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2334" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602576035241">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2334" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602576035241" />
-    <state x="631" y="369" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602728597195">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1602748156250">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="631" y="369" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1602728597195" />
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1602731089006">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1602731089006" />
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602575890326" />
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602748156250" />
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602577996153" />
-    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1602731089005">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1602748156250">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1602731089005" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602575890326" />
+    <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602748156250" />
     <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602577996153" />
-    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1602731089004">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1602748156250">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1602731089004" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602575890325" />
+    <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602748156250" />
     <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602577996153" />
-    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1602731089005">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1602748156250">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1602731089005" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602575890326" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602748156250" />
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602577996153" />
-    <state x="496" y="300" key="Vcs.Push.Dialog.v2" timestamp="1602734535765">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1602638860866">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="496" y="300" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1602734535765" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602638860866" />
   </component>
 </project>

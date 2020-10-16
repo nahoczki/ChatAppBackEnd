@@ -11,6 +11,14 @@ const registerValidation = body => {
     return schema.validate(body);
 }
 
+const roomValidation = body => {
+    const schema = Joi.object({
+        recipient : Joi.string().required()
+    });
+
+    return schema.validate(body);
+}
+
 const loginValidation = body => {
     const schema = Joi.object({
         email: Joi.string().required().email(),
@@ -22,3 +30,4 @@ const loginValidation = body => {
 
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
+module.exports.roomValidation = roomValidation;

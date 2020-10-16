@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    chatrooms: {
+        type: Array,
+        required: false
+    },
     email: {
         type: String,
         required: true
