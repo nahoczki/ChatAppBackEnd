@@ -3,7 +3,14 @@ const app = express();
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 dotenv.config();
+
+io.on('connection', () =>{
+    console.log('a user is connected')
+})
 
 //DB
 mongoose.connect(process.env.DB_CONNECT,
@@ -26,10 +33,4 @@ app.use('/api/users', usersRoute);
 app.use('/api/rooms', roomRoute);
 
 
-const server = app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
-
-const io = require('socket.io').listen(server);
-
-io.on('connection', () =>{
-    console.log('a user is connected')
-})
+app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
