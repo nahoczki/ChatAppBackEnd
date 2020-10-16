@@ -26,7 +26,7 @@ app.use('/api/users', usersRoute);
 app.use('/api/rooms', roomRoute);
 
 
-const server = app.listen(process.env.PORT, '::1', () => console.log("Server listening on port " + process.env.PORT))
+const server = app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
 
 const io = require('socket.io').listen(server);
 
