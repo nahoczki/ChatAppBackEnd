@@ -28,7 +28,7 @@ app.use('/api/rooms', roomRoute);
 
 const server = app.listen(process.env.PORT, '::1', () => console.log("Server listening on port " + process.env.PORT))
 
-const io = require('socket.io')(server);
+const io = require('socket.io').listen(server);
 
 io.on('connection', () =>{
     console.log('a user is connected')
