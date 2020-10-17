@@ -24,5 +24,5 @@ module.exports.socketHandler = function(server) {
         });
 
         console.log('a user is connected');
-    })
+    });
 }
