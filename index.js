@@ -3,14 +3,12 @@ const app = express();
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+//const http = require('http').Server(app);
+
 
 dotenv.config();
 
-io.on('connection', () =>{
-    console.log('a user is connected')
-})
+
 
 //DB
 mongoose.connect(process.env.DB_CONNECT,
@@ -21,7 +19,7 @@ mongoose.connect(process.env.DB_CONNECT,
 //Routes
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
-const roomRoute = require('./routes/chatroom')
+const roomRoute = require('./routes/chatroom');
 
 //Middleware
 app.use(express.json());
@@ -33,4 +31,16 @@ app.use('/api/users', usersRoute);
 app.use('/api/rooms', roomRoute);
 
 
-app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
+const server = app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
+
+const io = require('socket.io')(server);
+
+io.on('connection', (socket) =>{
+
+    socket.on('message', (data) => {
+        console.log(data);
+        socket.emit("lol");
+    });
+
+    console.log('a user is connected')
+})
