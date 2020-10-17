@@ -31,16 +31,7 @@ app.use('/api/users', usersRoute);
 app.use('/api/rooms', roomRoute);
 
 
-const server = app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT))
+const server = app.listen(process.env.PORT, () => console.log("Server listening on port " + process.env.PORT));
+const {socketHandler} = require('./helpers/socket-handler');
 
-const io = require('socket.io')(server);
-
-io.on('connection', (socket) =>{
-
-    socket.on('message', (data) => {
-        console.log(data);
-        socket.emit("lol");
-    });
-
-    console.log('a user is connected')
-})
+socketHandler(server);
