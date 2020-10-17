@@ -7,20 +7,22 @@ module.exports.socketHandler = function(server) {
     ioSocket.on('connection', (socket) =>{
 
         socket.on('joinRoom', (data) => {
-            socket.join('112233');
-            console.log("Joined room");
+
+            let parsedData = JSON.parse(data);
+
+            socket.join(parsedData['roomId']);
+            console.log(`${parsedData['userId']} joined room ${parsedData['roomId']}`);
         });
 
-        socket.on('newMessage', (data) => {
-            console.log(data);
-            socket.to('112233').emit("1234", {
-                "message" : "fuck"
+        socket.on('sendMessage', (data) => {
+            let parsedData = JSON.parse(data);
+
+
+            socket.to(parsedData['roomId']).emit("newMessage", {
+                "message" : data.message
             });
         });
 
         console.log('a user is connected');
     })
-
-
-
 }
