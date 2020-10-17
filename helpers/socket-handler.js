@@ -6,9 +6,14 @@ module.exports.socketHandler = function(server) {
 
     ioSocket.on('connection', (socket) =>{
 
+        socket.on('joinRoom', (data) => {
+            socket.join('112233');
+            console.log("Joined room");
+        });
+
         socket.on('newMessage', (data) => {
             console.log(data);
-            socket.emit("1234", {
+            socket.to('112233').emit("1234", {
                 "message" : "fuck"
             });
         });
