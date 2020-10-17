@@ -19,7 +19,7 @@ module.exports.socketHandler = function(server) {
 
 
             socket.to(parsedData['roomId']).emit("newMessage", {
-                "message" : data.message
+                "message" : parsedData['message']
             });
         });
 
