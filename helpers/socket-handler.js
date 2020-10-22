@@ -19,13 +19,15 @@ module.exports.socketHandler = function(server) {
             let parsedData = JSON.parse(data);
 
 
+            console.log(`[${parsedData['roomId']}] ${parsedData['userId']} sent: ${parsedData['content']}`)
+
             const chatRoom = ChatRoom.findOne({_id: parsedData['roomId']});
             const messageObj = {
                 userId: parsedData["userId"],
                 content: parsedData["message"]
             }
 
-            await chatRoom.updateOne({ $addToSet: { messages: [messageObj] },});
+            await chatRoom.updateOne({ $push: { messages: [messageObj] },});
 
             socket.to(parsedData['roomId']).emit("newMessage", {
                 "message" : parsedData['message']

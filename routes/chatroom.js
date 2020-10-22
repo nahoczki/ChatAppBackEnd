@@ -73,7 +73,7 @@ router.post('/', verify, async (req, res) => {
         res.status(200).send(savedChatRoom);
 
     } catch (e) {
-        res.status(400).send(handleErrorMsg(400, "Internal Error"))
+        res.status(400).send(handleErrorMsg(400, "Internal Error"));
     }
 })
 
