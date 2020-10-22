@@ -30,10 +30,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1119bd0-6e94-4acf-9bee-22f79594e1a4" name="Default Changelist" comment="Refined ChatRoom endpoints">
+    <list default="true" id="e1119bd0-6e94-4acf-9bee-22f79594e1a4" name="Default Changelist" comment="Added log for messages sent, and changed $addtoset to $push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/socket-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/socket-handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/chatroom.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/chatroom.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603064383928</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added log for messages sent, and changed $addtoset to $push">
+      <created>1603408337926</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603408337926</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +226,8 @@
     <MESSAGE value="Added room routes" />
     <MESSAGE value="Messing with scokets..." />
     <MESSAGE value="Refined ChatRoom endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refined ChatRoom endpoints" />
+    <MESSAGE value="Added log for messages sent, and changed $addtoset to $push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added log for messages sent, and changed $addtoset to $push" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2334" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602576035241">
@@ -251,11 +258,11 @@
     <state width="1771" height="304" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1603205605761" />
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602830882428" />
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1602577996153" />
-    <state x="552" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603080227113">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1603408344859">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="515" y="260" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1602833904138" />
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1602916080902" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1603408344859" />
     <state x="552" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603080227113" />
     <state x="569" y="140" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602915069375">
       <screen x="0" y="0" width="1920" height="1050" />

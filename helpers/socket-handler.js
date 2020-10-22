@@ -30,6 +30,7 @@ module.exports.socketHandler = function(server) {
             await chatRoom.updateOne({ $push: { messages: [messageObj] },});
 
             socket.to(parsedData['roomId']).emit("newMessage", {
+                "userId" : parsedData["userId"],
                 "message" : parsedData['message']
             });
         });
