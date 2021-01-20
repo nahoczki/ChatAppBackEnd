@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 //const http = require('http').Server(app);
 
@@ -22,6 +23,7 @@ const usersRoute = require('./routes/users');
 const roomRoute = require('./routes/chatroom');
 
 //Middleware
+app.use(cors())
 app.use(express.json());
 
 
