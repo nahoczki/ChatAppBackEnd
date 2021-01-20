@@ -9,6 +9,10 @@ const cors = require('cors');
 
 dotenv.config();
 
+const corsOptions = {
+    exposedHeaders: 'Auth-Token',
+};
+
 
 
 //DB
@@ -23,7 +27,7 @@ const usersRoute = require('./routes/users');
 const roomRoute = require('./routes/chatroom');
 
 //Middleware
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json());
 
 
