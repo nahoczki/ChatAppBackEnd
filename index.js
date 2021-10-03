@@ -30,7 +30,7 @@ const roomRoute = require('./routes/chatroom');
 //Middleware
 app.use(cors(corsOptions))
 app.use(express.json());
-app.use(morgan('tiny'))
+app.use(morgan('combined'))
 
 
 //Route Middleware
