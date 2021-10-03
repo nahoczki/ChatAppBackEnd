@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 const cors = require('cors');
+const morgan = require('morgan');
 
 //const http = require('http').Server(app);
 
@@ -29,6 +30,7 @@ const roomRoute = require('./routes/chatroom');
 //Middleware
 app.use(cors(corsOptions))
 app.use(express.json());
+app.use(morgan('tiny'))
 
 
 //Route Middleware
